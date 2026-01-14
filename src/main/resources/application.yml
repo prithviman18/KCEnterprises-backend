@@ -1,0 +1,52 @@
+spring:
+  jackson:
+    deserialization:
+      ADJUST_DATES_TO_CONTEXT_TIME_ZONE: false
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    parser:
+      ALLOW_UNQUOTED_FIELD_NAMES: true
+    time-zone: Asia/Kolkata
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+  application:
+    name: Enterprises
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: 86400000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: method
+    tags-sorter: alpha
+  packages-to-scan: com.KC.Enterprises.controller
+  paths-to-match: /**
+
+logging:
+  level:
+    com.KC.Enterprises: DEBUG
+    org.springdoc: DEBUG
+    org.springframework.web: DEBUG
