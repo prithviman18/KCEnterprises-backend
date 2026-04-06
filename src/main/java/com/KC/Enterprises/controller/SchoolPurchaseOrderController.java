@@ -32,7 +32,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/school-purchase-orders")
+@RequestMapping("/school-purchase-orders")
 @RequiredArgsConstructor
 @Tag(name = "School Purchase Orders", description = "School purchase order management APIs")
 @SecurityRequirement(name = "Bearer Authentication")

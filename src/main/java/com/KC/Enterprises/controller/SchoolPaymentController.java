@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/school-payments")
+@RequestMapping("/school-payments")
 @RequiredArgsConstructor
 @Tag(name = "School Payments", description = "APIs for managing payments from schools")
 @SecurityRequirement(name = "Bearer Authentication")
