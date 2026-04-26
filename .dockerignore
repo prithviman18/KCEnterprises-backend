@@ -1,0 +1,13 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!target/*.jar
+!target/*.war
+*~
+*.class
+.git/
+.gitignore
+.vscode/
+.idea/
+*.iml
+.env
+.env.local
