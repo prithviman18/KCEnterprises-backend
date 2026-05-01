@@ -62,12 +62,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         
-        // Allow React dev server origins
-        configuration.setAllowedOrigins(Arrays.asList(
-            "http://localhost:3000",  // Create React App default
-            "http://localhost:5173",  // Vite default
-            "http://localhost:8081"   // Alternative port
-        ));
+        configuration.setAllowedOriginPatterns(List.of("*"));
         
         // Allow all HTTP methods
         configuration.setAllowedMethods(Arrays.asList(
